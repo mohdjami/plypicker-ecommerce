@@ -6,7 +6,7 @@ import cookie from "cookie";
 import mongoose from "mongoose";
 
 const createTokenAndSendResponse = async (payload, res) => {
-  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
+  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "24h" });
   const cookieOptions = {
     httpOnly: true,
     sameSite: "Lax", // or "Lax" if you're testing on localhost without HTTPS
