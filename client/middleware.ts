@@ -27,17 +27,13 @@ export function middleware(request: NextRequest) {
       path: "/",
     });
   }
-
   cookie = response.cookies.get("jwt");
-  console.log("final", cookie); // => { name: 'vercel', value: 'fast', Path: '/' }
-  // The outgoing r
-
   return NextResponse.next({ headers });
 }
 
-export const config = {
-  matcher: [
-    // match all routes except static files and APIs
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
-  ],
-};
+// export const config = {
+//   matcher: [
+//     // match all routes except static files and APIs
+//     "/((?!api|_next/static|_next/image|favicon.ico).*)",
+//   ],
+// };
