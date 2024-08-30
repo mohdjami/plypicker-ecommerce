@@ -22,7 +22,7 @@ export async function isAuthorized() {
       },
     };
     const response = await fetch(
-      "http://localhost:8000/api/authenticated",
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/authenticated`,
       options
     );
 

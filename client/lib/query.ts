@@ -21,7 +21,7 @@ export async function fetchProducts(query: any): Promise<ProductsProps> {
     };
 
     const response = await fetch(
-      `http://localhost:8000/api/products?page=${currentPage}&limit=${limit}&department=${category}&search=${search}`,
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/products?page=${currentPage}&limit=${limit}&department=${category}&search=${search}`,
       options
     );
     const data = await response.json();
@@ -67,7 +67,7 @@ export async function getSubmissions() {
   };
 
   const response = await fetch(
-    `http://localhost:8000/api/submissions`,
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/submissions`,
     options
   );
   const data = await response.json();
@@ -92,7 +92,10 @@ export async function getRequests() {
     },
   };
 
-  const response = await fetch(`http://localhost:8000/api/requests`, options);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/requests`,
+    options
+  );
   const data = await response.json();
   if (!response.ok) {
     throw new Error(data.message);
