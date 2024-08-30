@@ -27,7 +27,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // Adjust as needed
+    origin: "http://localhost:3000", // Adjust as needed
     credentials: true,
   })
 ); // HTTP request logging using Morgan and Winston

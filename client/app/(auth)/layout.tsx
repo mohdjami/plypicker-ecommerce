@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbarr";
 import { getUser } from "@/lib/user";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -15,13 +15,5 @@ export default async function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getUser();
-  if (user) {
-    redirect("/products");
-  }
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+  return <main>{children}</main>;
 }

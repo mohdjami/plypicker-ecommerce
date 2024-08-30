@@ -55,27 +55,27 @@ export const getSubmissions = async (req, res) => {
       userId: user._id,
     });
     const length = submissions.length;
-    let approved = 0;
-    let rejected = 0;
-    let pending = 0;
+    let Sapproved = 0;
+    let Srejected = 0;
+    let Spending = 0;
     submissions.map((item) => {
       if (item.status === "approved") {
-        approved++;
+        Sapproved++;
       }
       if (item.status === "rejected") {
-        rejected++;
+        Srejected++;
       }
       if (item.status === "pending") {
-        pending++;
+        Spending++;
       }
     });
     console.log(submissions);
     res.json({
       length,
       submissions,
-      approved,
-      rejected,
-      pending,
+      Sapproved,
+      Srejected,
+      Spending,
     });
   } catch (error) {
     res.status(400).json({ error: error.message });

@@ -16,8 +16,6 @@ interface PageProps {
   };
 }
 const page = async ({ params, searchParams }: PageProps) => {
-  const pathname = headers().get("x-current-path");
-  const headersList = headers();
   const user = await getUser();
   if (!user) {
     return redirect("/login");

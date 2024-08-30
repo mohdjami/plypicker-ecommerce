@@ -39,14 +39,19 @@ export default async function ProfilePage() {
       return i.charAt(0).toUpperCase() + i.slice(1);
     })
     .join(" ");
-  const dataS = await getSubmissions();
-  const { Slength, Sapproved, Srejected, Spending } = dataS;
-
+  let dataS;
+  let res;
+  role === "Admin"
+    ? (res = await getRequests())
+    : (dataS = await getSubmissions());
+  if (dataS) {
+    var { Sapproved, Srejected, Spending } = dataS;
+  }
+  console.log(dataS);
   // Mock request statistics
-  const res = await getRequests();
-  console.log(res);
-  const { Rlength, Rapproved, Rrejected, Rpending } = res;
-  console.log(Rapproved);
+  if (res) {
+    var { Rapproved, Rrejected, Rpending } = res;
+  }
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
       <div className="max-w-4xl mx-auto space-y-4">

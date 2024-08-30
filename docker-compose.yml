@@ -1,11 +1,20 @@
 version: "3"
 services:
-  web:
+  app:
     build: .
-    ports:
-      - "8000:8000"
     env_file:
       - .env
     volumes:
       - .:/usr/src/app
     command: sh -c "npm rebuild bcrypt --build-from-source && npm install && npm start"
+  web:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./client/.env.local
+    volumes:
+      - ./client:/app
+    command: sh -c "npm install && npm run dev"

@@ -8,6 +8,6 @@ export async function getToken() {
 
 import "server-only";
 
-export function deleteSession() {
+export async function deleteSession() {
   cookies().delete("session");
 }

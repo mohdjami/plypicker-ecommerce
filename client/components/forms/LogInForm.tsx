@@ -27,6 +27,7 @@ export default function LogInForm() {
 
     // Here you would typically call an API to handle the login process
     const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/login`;
+
     const options = await createOptions("POST", undefined, { email, password });
 
     const res = await fetch(url, options);

@@ -111,6 +111,11 @@ export async function createOptions(
 }
 
 export async function logout() {
-  await deleteSession();
-  redirect("/login");
+  try {
+    await deleteSession();
+    console.log("logged out");
+    redirect("/login");
+  } catch (error) {
+    console.error(error);
+  }
 }
