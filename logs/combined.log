@@ -4474,3 +4474,5 @@
 2024-08-30 20:06:43 [info]: ::1 - - [30/Aug/2024:14:36:43 +0000] "GET /api/authenticated HTTP/1.1" 200 146 "-" "node"
 2024-08-30 20:06:43 [info]: ::1 - - [30/Aug/2024:14:36:43 +0000] "GET /api/authenticated HTTP/1.1" 200 146 "-" "node"
 2024-08-30 20:06:43 [info]: ::1 - - [30/Aug/2024:14:36:43 +0000] "GET /api/products?page=0&limit=4&department=ALL&search= HTTP/1.1" 200 53668 "-" "node"
+2024-08-30 15:34:00 [info]: ::ffff:172.25.0.1 - - [30/Aug/2024:15:34:00 +0000] "GET /api/requests/ HTTP/1.1" 401 25 "-" "PostmanRuntime/7.41.2"
+2024-08-30 15:34:10 [info]: ::ffff:172.25.0.1 - - [30/Aug/2024:15:34:10 +0000] "POST /api/auth/login HTTP/1.1" 200 378 "-" "PostmanRuntime/7.41.2"

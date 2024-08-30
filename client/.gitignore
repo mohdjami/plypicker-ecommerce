@@ -7,6 +7,7 @@
 .yarn/install-state.gz
 node_modules
 client/node_modules
+fireBaseCnfig.ts
 # testing
 /coverage
 
